@@ -46,6 +46,7 @@ const AddSensorItems = () => {
                                 <MenuItem value={'volog'}>Вологість</MenuItem>
                                 <MenuItem value={'tick'}>Тиск</MenuItem>
                                 <MenuItem value={'light'}>Освітлення</MenuItem>
+                                <MenuItem value={'light'}>Освітлення</MenuItem>
                             </Select>
                         </Paper>
                     </Grid>
