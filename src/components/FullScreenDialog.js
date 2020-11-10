@@ -32,24 +32,22 @@ const  FullScreenDialog=(props)=> {
     };
     const handleClose = () => {
         setOpen(false);
-        props.changeMessage()
+
     };
 
     return (
         <div>
             <div style={{padding:'100%'}} onClick={()=>handleClickOpen()}>{props.addIcon }</div>
-            <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
+            <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition} >
                 <AppBar className={classes.appBar}>
                     <Toolbar>
-                        <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
-                            <CloseIcon />
-                        </IconButton>
+
                         <Typography variant="h6" className={classes.title}>
                             Редагування
                         </Typography>
-                        <Button autoFocus color="inherit" onClick={()=>handleClose()} >
-                            Зберегти
-                        </Button>
+                        <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
+                            <CloseIcon />
+                        </IconButton>
                     </Toolbar>
                 </AppBar>
                <div style={{display:"flex", justifyContent:"center",alignItems:"center"}}>
@@ -60,12 +58,4 @@ const  FullScreenDialog=(props)=> {
     );
 }
 
-const mapDispatchToProps = (dispatch)=>{
-    return {
-        changeMessage:()=>{
-            dispatch({type:'ADD_MESSAGE_CHANGE'})
-        }
-    }
-}
-
-export default (connect(mapDispatchToProps,mapDispatchToProps)(FullScreenDialog));
+export default FullScreenDialog;

@@ -48,9 +48,13 @@ const SensorsItems = (props) => {
 
     const classes = useStyles();
     const [changed,setChanged] = useState(false);
+    const [AddLoad,setAddLoad] = useState(false);
 
     const handleChanged =()=>{
         setChanged(()=>!changed);
+    }
+    const onAddedToSensor =()=>{
+       setAddLoad(true)
     }
     const iconDelete =    <span className={classes.delete}><ClearIcon fontSize='small' color="error"/></span>;
     const  addIcon =  <AddIcon fontSize='large' style={{
@@ -95,7 +99,7 @@ const SensorsItems = (props) => {
                 }
                 {
                     changed ? <Paper elevation={8} style={{position: "relative"}} >
-                       <FullScreenDialog addIcon ={ addIcon } content={<AddSensorItems />} />
+                       <FullScreenDialog addIcon ={ addIcon } content={<AddSensorItems/>} />
                     </Paper>  : null
                 }
 

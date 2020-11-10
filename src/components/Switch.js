@@ -6,19 +6,18 @@ import {connect} from "react-redux";
 
 
 const Switched = (props) => {
-    const [checked, setChecked] = React.useState(props.value);
+    const [checked ,setChecked] = React.useState(props.value);
     const toggleChecked = () => {
         setChecked((prev) => !prev);
         props.toggleChecked(checked);
     };
-
-    console.log(checked)
     return (
        <Fragment >
            <FormGroup>
                <FormControlLabel
                    control={<Switch checked={checked} onChange={()=>toggleChecked()}/>}
                />
+               {console.log(checked)}
            </FormGroup>
        </Fragment>
     );

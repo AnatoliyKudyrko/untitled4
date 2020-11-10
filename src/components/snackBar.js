@@ -27,14 +27,14 @@ const  SnackBar = (props) =>{
         setOpen(props.messageChange.message);
         const timer = setTimeout(() => {
             props.ResetComponent();
-        }, 1000);
+        }, 5000);
         return () => clearTimeout(timer);
     },[props.messageChange.message])
 
     return (
         <div className={classes.root}>
             {
-                open ?   <SnackbarContent message="I love snacks." action={action} /> : null
+                open ?   <SnackbarContent message="Було зміненно" action={action} /> : null
             }
         </div>
     );

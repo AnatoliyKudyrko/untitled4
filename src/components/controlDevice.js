@@ -77,15 +77,7 @@ useEffect(()=>{
        props.SelectID(id)
     }
     const toggleChecked = (value)=>{
-    console.log(value)
         return value;
-    }
-    const LoadData = (id,value,name,img)=>{
-    setObj({
-        id,
-        value,
-        name,img
-    })
     }
 
     return (
@@ -105,7 +97,7 @@ useEffect(()=>{
                                         {type === 'LED' ? <WbIncandescentIcon  style={{color:`${color}`, fontSize:'64'}}/> : null}
                                         <span>{name}</span>
                                         <Switched value={value} toggleChecked={()=>toggleChecked(value)}
-                                                  onClick ={  ()=> LoadData(id,toggleChecked(value),name,img)} />
+                                                  onClick ={  ()=> props.CheckedDevice({id,value})} />
                                     </div>
                                 </Paper>
                             </li>

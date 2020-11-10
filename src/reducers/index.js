@@ -57,6 +57,11 @@ function reducer(state=initialState,action){
                     value:action.payload
                 },
             };
+        case 'ADD_TO_DEVICE':
+            return  {
+                ...state,
+                device: [...state.device, action.payload]
+            };
         default: return state
 
     }
